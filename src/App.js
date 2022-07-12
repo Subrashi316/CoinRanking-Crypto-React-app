@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./pages/Home";
+import CryptoDetail from "./pages/CryptoDetail";
+import { Routes, Route } from "react-router-dom";
+import { Fragment } from "react";
+import { AiFillGithub } from "react-icons/ai";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <main className="App container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/crypto/:id" element={<CryptoDetail />} />
+        </Routes>
+      </main>
+      <footer className="footer container">
+      <p>This project was made by Subrashi316</p> 
+      <a href="https://github.com/Subrashi316" className="link-item" target="_blank" rel="noreferrer"><AiFillGithub /> Github</a>
+    </footer>
+    </Fragment>
   );
 }
 
