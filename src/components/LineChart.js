@@ -4,6 +4,7 @@ import chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
 import { useGetPriceHistoryQuery } from "../utils/API";
 import { unix } from "moment";
+import Spinner from './Spinner';
 
 chart.register(CategoryScale);
 
@@ -30,7 +31,7 @@ function LineChart(props) {
     );
   }
 
-  if (!priceHistory) return 'Loading....';
+  if (!priceHistory) return <Spinner />;
 
   const prices = [];
   const dates = [];
