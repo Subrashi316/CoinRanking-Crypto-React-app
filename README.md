@@ -3,3 +3,4 @@ Crypto info site made using react js and coin ranking api. It also uses chart.js
 
 # To Start 
 type npm install in cmd
+type npm start
